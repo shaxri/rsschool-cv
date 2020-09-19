@@ -146,5 +146,7 @@ Examples of main works done as **Software Developer**:<br>
 - Uzbek (native) :star::star::star::star::star:,
 - Russian (fluent) :star::star::star::star:,
 - English (fluent) :star::star::star::star:,
+  > As my bachelor degree was taught in English, my diploma can confirm language proficiency. <br>Moreover, I have graduated Masters program which is taught in English as well.
+  > <br>Before, going to high level education I attended IELTS courses in Cambridge Learning Center in Tashkent during 6 months.
 - Italian(Foundation) :star:,
 - German A2 :star::star:
