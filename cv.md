@@ -40,3 +40,82 @@ Examples of main works done as **Software Engineer**:<br>
 :test_tube: **Methodologies**:
 
 - Scrum
+
+_Code example extraction_:
+
+```
+package com.innochildren.routes
+
+import akka.actor.ActorRef
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
+import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server.Route
+import akka.pattern._
+import akka.util.Timeout
+import com.innochildren.actors.PostActor.{ AddPost, DeletePost, GetPostById, GetPosts, UpdatePost }
+import com.innochildren.actors.SchoolActor._
+import com.innochildren.mappings.JsonMappings
+import com.innochildren.models.Types.Id
+import com.innochildren.models.{ Post, School }
+import spray.json._
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
+
+trait PostRoute extends JsonMappings {
+  def postActor: ActorRef
+
+  implicit lazy val timeoutPostActor: Timeout = Timeout(5.seconds)
+
+  val postApi: Route =
+    (path("posts") & get) {
+      val res = (postActor ? GetPosts("all")).mapTo[Seq[Post]].map(_.toJson)
+      complete(res)
+    } ~
+      (path("posts" / ".+".r) & get) { id =>
+        val res = (postActor ? GetPostById(id)).mapTo[Post].map(_.toJson)
+        complete(res)
+      } ~
+      (path("posts") & post) {
+        entity(as[Post]) { post =>
+          val res = (postActor ? AddPost(post)).mapTo[Id]
+          complete(res)
+        }
+      } ~
+      (path("posts" / ".+".r) & put) { id =>
+        entity(as[Post]) { post =>
+          val res = (postActor ? UpdatePost(post, id)).mapTo[Int].map(_.toJson)
+          complete(res)
+        }
+      } ~
+      (path("posts" / ".+".r) & delete) { id =>
+        val res = (postActor ? DeletePost(id)).mapTo[Int].map(_.toJson)
+        complete(res)
+      }
+}
+```
+
+**LTD STARTSOFT**, Tashkent, Uzbekistan August, August, 2016 – June, 2018  
+Examples of main works done as **Software Developer**:<br>
+
+- Single electronic archive system of civil status records
+- Authority of the prosecutor
+- Executory process automation system of the Department of Execution of Court Decisions
+
+:hammer_and_wrench: **Technologies**:
+
+- _Java 8, Java2EE, Spring (Cloud, Security, JPA, Boot, Web, REST);_
+- _PostgreSQL;_
+- _JBoss;_
+- _JSF CDI;_
+- _Hibernate;_
+- _Git;_
+- _Jira Atlassian;_
+- _Maven;_
+- _Microservices, AWS, Docker, Jenkins;_
+- _Angular JS, JUnit/Mockito;_
+- _JSP, HTML/CSS;_
+
+:test_tube: **Methodologies**:
+
+- Adopted Scrum
