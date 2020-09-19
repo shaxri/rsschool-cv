@@ -119,3 +119,32 @@ Examples of main works done as **Software Developer**:<br>
 :test_tube: **Methodologies**:
 
 - Adopted Scrum
+
+#### :man_student: **EDUCATION**
+
+- Innopolis University, Republic of Tatarstan, Russian Federation
+
+  > Master of Science in Information Technology – Software Engineering
+  > <br>**Thesis work**:
+  > Design and implementation of a system for enterprise tax and reliability management using agile methodologies.
+
+- Turin Polytechnic University in Tashkent, Uzbekistan
+  > Bachelor of Science Information Technology and ACS in the industry
+  > <br>**Thesis work**:
+  > Health Technology Management’s Open Source Information System Implementation at pilot project.
+
+#### :man_technologist: **ADDITIONAL TRAININGS**
+
+- Apache Kafka, Kafka Streams, Akka HTTP, Akka Streams | 2019
+- PL/SQL, Oracle Developer, SPRING MVC, GWT, ASP.NET CORE, ASP.NET MVC, Angular | 2016
+- IBM SPSS Statistics, JQuery, Bootstrap | 2015
+- Learn German at the Goethe Institute, A-2,2 level | 2014
+- Programming languages C, Java, Scala, PHP, JavaScript | 2012
+
+#### :capital_abcd: **LANGUAGE SKILLS**
+
+- Uzbek (native) :star::star::star::star::star:,
+- Russian (fluent) :star::star::star::star:,
+- English (fluent) :star::star::star::star:,
+- Italian(Foundation) :star:,
+- German A2 :star::star:
